@@ -1,0 +1,602 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Project 1: Quote Generator */
+.quote-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: url('./Image/backround.jpg') no-repeat center center / cover;
+}
+
+.quote-page .container {
+    width: 550px;
+    height: 450px;
+}
+
+.quote-page .header {
+    font-size: 1.2rem;
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: #262626;
+    padding: 5px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.quote-page .main-content {
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 50px 40px;
+    box-shadow: 0 0 10px;
+}
+
+.quote-page .main-content .text-area {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.quote-page .main-content .person {
+    font-size: 1.6rem;
+    color: red;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.quote-page .button-area button {
+    background-color: #262626;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.quote-page .button-area button:hover {
+    background-color: lightgray;
+}
+
+/* Project 2: Modal */
+.modal-page {
+    background: url('./Image/misty-background.webp') no-repeat center center / cover;
+    height: 100vh;
+    position: relative;
+}
+
+#open-btn {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    width: 350px;
+    height: 80px;
+    font-size: 2rem;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 5px black;
+    transition: 1s;
+}
+
+#open-btn:hover {
+    background: #fff;
+    color: black;
+    cursor: pointer;
+}
+
+#modal {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: animatemodal 0.4s;
+}
+
+#close-btn {
+    font-size: 3rem;
+}
+
+#close-btn:hover {
+    cursor: pointer;
+    color: red;
+}
+
+#modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes animatemodal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+/* Project 3: FAQ Accordion */
+.accordion-page {
+    background: url('./Image/large-pile-blue-question-marks-are-shown-large-group-blue-question-marks_1295671-34237.avif') center center / cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion {
+    width: 60%;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.questions {
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.content-container {
+    margin-top: 10px;
+}
+
+.heading {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 20px 0;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+.content {
+    padding-top: 10px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    height: 0;
+    overflow: hidden;
+    transition: height 1s ease;
+}
+
+.heading::after {
+    content: '+';
+    position: absolute;
+    right: -5px;
+}
+
+.content-container.active .content {
+    height: 150px;
+}
+
+.content-container.active .heading {
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.content-container.active .heading::after {
+    content: '-';
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+/* Project 4: Stopwatch */
+.stopwatch-page {
+    height: 100vh;
+    background: url('./Image/OIP.webp') center center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stopwatch-page .container {
+    width: 60%;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 3px;
+}
+
+#timer {
+    width: 100%;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto;
+    padding: 35px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.stopwatch-page .buttons button {
+    margin: 0 10px;
+    border: none;
+}
+
+.stopwatch-page .buttons button i {
+    font-size: 2rem;
+    color: #fff;
+    padding: 10px;
+    width: 50px;
+}
+
+#play {
+    background-color: green;
+}
+
+#pause {
+    background-color: orange;
+}
+
+#reset {
+    background-color: red;
+}
+
+/* Project 5: To-Do List */
+.todo-page {
+    height: 100vh;
+    background: url('./Image/coffee table.avif') no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-page .container {
+    width: min(90%, 450px);
+}
+
+#add-task-container {
+    width: 350px;
+    max-width: 100%;
+    padding: 20px 10px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 3px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.todo-page input {
+    flex: 5;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+#add-task {
+    flex: 1;
+    font-size: 1.2rem;
+    padding: 5px;
+    background-color: #fff;
+    color: green;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+
+#add-task:hover {
+    background-color: green;
+    color: #fff;
+    cursor: pointer;
+}
+
+.task {
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task li {
+    list-style: none;
+    font-size: 1.3rem;
+    padding: 5px;
+    flex: 4;
+    margin: 10px;
+}
+
+.task button {
+    flex: 1;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.task .checkTask {
+    color: orange;
+    margin-right: 5px;
+    border: 2px solid orange;
+    font-size: 1.5rem;
+}
+
+.task .checkTask:hover {
+    background-color: orange;
+    color: #fff;
+}
+
+.task .deleteTask {
+    color: red;
+    margin-right: 5px;
+    border: 2px solid red;
+    font-size: 1.3rem;
+}
+
+.task .deleteTask:hover {
+    background-color: red;
+    color: #fff;
+}
+
+/* Shared project navigation */
+.project-nav {
+    position: fixed;
+    right: 32px;
+    bottom: 26px;
+    left: 32px;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.project-nav a {
+    min-width: 126px;
+    padding: 13px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
+    background: rgba(20, 24, 31, 0.78);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-decoration: none;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    pointer-events: auto;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-nav a:hover,
+.project-nav a:focus-visible {
+    background: #fff;
+    color: #17202a;
+    outline: none;
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Welcome page */
+.welcome-page {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    color: #f8f4ec;
+    background: #152a2b;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.welcome-page::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(125deg, rgba(17, 38, 38, 0.98) 15%, rgba(17, 38, 38, 0.72) 55%, rgba(198, 104, 64, 0.64)), radial-gradient(circle at 80% 20%, #d88b58 0, transparent 32%);
+    content: '';
+}
+
+.welcome-page::after {
+    position: absolute;
+    inset: 0;
+    opacity: 0.22;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 48px 48px;
+    content: '';
+    mask-image: linear-gradient(to bottom right, black, transparent 75%);
+}
+
+.welcome-card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 820px);
+    padding: clamp(32px, 7vw, 78px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 28px;
+    background: rgba(13, 31, 32, 0.48);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(14px);
+    animation: welcome-rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.welcome-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f1b18a;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    animation: welcome-fade 0.7s 0.15s both;
+}
+
+.welcome-eyebrow span {
+    width: 34px;
+    height: 2px;
+    background: #f1b18a;
+}
+
+.welcome-card h1 {
+    max-width: 700px;
+    margin: 24px 0 20px;
+    color: #fffaf1;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 6.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    animation: welcome-fade 0.7s 0.28s both;
+}
+
+.welcome-card h1 em {
+    color: #f0a67d;
+    font-style: normal;
+}
+
+.welcome-intro {
+    max-width: 560px;
+    color: rgba(248, 244, 236, 0.78);
+    font-size: 1.08rem;
+    line-height: 1.7;
+    animation: welcome-fade 0.7s 0.4s both;
+}
+
+.welcome-continue {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 34px;
+    padding: 16px 18px 16px 24px;
+    border-radius: 999px;
+    background: #f4b08a;
+    color: #172a2b;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 14px 30px rgba(240, 166, 125, 0.22);
+    animation: welcome-fade 0.7s 0.52s both;
+    transition: gap 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-continue:hover,
+.welcome-continue:focus-visible {
+    gap: 32px;
+    outline: none;
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px rgba(240, 166, 125, 0.38);
+}
+
+.welcome-arrow {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 50%;
+    background: #172a2b;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.project-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-top: 54px;
+    color: rgba(248, 244, 236, 0.55);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    animation: welcome-fade 0.7s 0.64s both;
+}
+
+.welcome-orbit {
+    position: absolute;
+    z-index: 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    animation: orbit-drift 12s ease-in-out infinite alternate;
+}
+
+.welcome-orbit--one {
+    top: -18vw;
+    right: -8vw;
+    width: 52vw;
+    height: 52vw;
+}
+
+.welcome-orbit--two {
+    bottom: -30vw;
+    left: -14vw;
+    width: 58vw;
+    height: 58vw;
+    animation-delay: -4s;
+}
+
+@keyframes welcome-rise {
+    from { opacity: 0; transform: translateY(28px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes welcome-fade {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orbit-drift {
+    from { transform: rotate(-8deg) scale(1); }
+    to { transform: rotate(8deg) scale(1.08); }
+}
+
+@media (max-width: 600px) {
+    .project-nav {
+        right: 16px;
+        bottom: 16px;
+        left: 16px;
+    }
+
+    .project-nav a {
+        min-width: 108px;
+        padding: 11px 14px;
+    }
+
+    .welcome-page {
+        padding: 18px;
+    }
+
+    .welcome-card {
+        padding: 32px 24px;
+        border-radius: 22px;
+    }
+
+    .welcome-card h1 {
+        font-size: clamp(2.6rem, 13vw, 4.5rem);
+    }
+
+    .welcome-intro {
+        font-size: 0.98rem;
+    }
+}
