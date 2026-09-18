@@ -16,7 +16,7 @@ const quotes = [
     { quote: '"The journey of a thousand miles begins with one step."', person: 'Lao Tzu' }
 ];
 
-if (quoteButton) {
+if (quoteButton && quoteText && quotePerson) {
     quoteButton.addEventListener('click', () => {
         const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
         quoteText.innerText = randomQuote.quote;
@@ -32,15 +32,18 @@ const closeButton = document.querySelector('#close-btn');
 if (openButton && modalContainer && closeButton) {
     openButton.addEventListener('click', () => {
         modalContainer.style.display = 'block';
+        openButton.setAttribute('aria-expanded', 'true');
     });
 
     closeButton.addEventListener('click', () => {
         modalContainer.style.display = 'none';
+        openButton.setAttribute('aria-expanded', 'false');
     });
 
     window.addEventListener('click', (event) => {
         if (event.target === modalContainer) {
             modalContainer.style.display = 'none';
+            openButton.setAttribute('aria-expanded', 'false');
         }
     });
 }
@@ -50,8 +53,13 @@ const accordionItems = document.querySelectorAll('.content-container');
 
 accordionItems.forEach((item) => {
     const heading = item.querySelector('.heading');
+    if (!heading) {
+        return;
+    }
+
     heading.addEventListener('click', () => {
         item.classList.toggle('active');
+        heading.setAttribute('aria-expanded', String(item.classList.contains('active')));
     });
 });
 

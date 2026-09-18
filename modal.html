@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="modal-page">
-    <button id="open-btn"><p>Where's Our Modal</p></button>
+    <button id="open-btn" type="button" aria-controls="modal-container" aria-expanded="false">Where's Our Modal</button>
     <div id="modal-container">
-        <div id="modal"><p>Here I am</p><div id="close-btn">&times;</div></div>
+        <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <p id="modal-title">Here I am</p>
+            <button id="close-btn" type="button" aria-label="Close modal">&times;</button>
+        </div>
     </div>
     <nav class="project-nav" aria-label="Project navigation">
         <a href="quote-generator.html">Previous</a>

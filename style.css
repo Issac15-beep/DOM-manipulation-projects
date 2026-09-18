@@ -17,8 +17,8 @@
 }
 
 .quote-page .container {
-    width: 550px;
-    height: 450px;
+    width: min(92%, 550px);
+    height: auto;
 }
 
 .quote-page .header {
@@ -77,7 +77,7 @@
     position: absolute;
     top: 70%;
     left: 10%;
-    width: 350px;
+    width: min(350px, 80vw);
     height: 80px;
     font-size: 2rem;
     background: transparent;
@@ -171,6 +171,10 @@
 }
 
 .heading {
+    display: block;
+    width: 100%;
+    background: transparent;
+    text-align: left;
     font-size: 1.3rem;
     font-weight: 600;
     padding: 16px 0;
@@ -195,7 +199,9 @@
 }
 
 .content-container.active .content {
-    height: 100px;
+    height: auto;
+    max-height: 12rem;
+    padding-bottom: 8px;
 }
 
 .content-container.active .heading {
@@ -219,7 +225,7 @@
 }
 
 .stopwatch-page .container {
-    width: 60%;
+    width: min(90%, 650px);
     height: 250px;
     background-color: #fff;
     border-radius: 30px;
@@ -264,7 +270,7 @@
 
 /* Project 5: To-Do List */
 .todo-page {
-    height: 100vh;
+    min-height: 100vh;
     background: url('./Image/coffee table.avif') no-repeat center center / cover;
     display: flex;
     justify-content: center;
@@ -408,6 +414,7 @@
     display: grid;
     place-items: center;
     padding: 32px;
+    overflow-x: hidden;
     color: #f8f4ec;
     background: #152a2b;
     font-family: 'DM Sans', sans-serif;
@@ -433,7 +440,7 @@
 .welcome-card {
     position: relative;
     z-index: 1;
-    width: min(100%, 820px);
+    overflow: hidden;
     padding: clamp(32px, 7vw, 78px);
     border: 1px solid rgba(255, 255, 255, 0.24);
     border-radius: 28px;
@@ -543,7 +550,7 @@
 
 .welcome-orbit--one {
     top: -18vw;
-    right: -8vw;
+    right: 24px;
     width: 52vw;
     height: 52vw;
 }
