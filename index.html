@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
-    <!-- Global font -->
+    <title>DOM Manipulation Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!-- Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
-<body class="todo-page">
-    <div class="container">
-        <div id="add-task-container">
-            <input type="text" id="input-task" placeholder="Enter task">
-            <button id="add-task"><i class="fa-solid fa-plus"></i></button>
+<body class="welcome-page">
+    <main class="welcome-card">
+        <div class="welcome-eyebrow"><span></span> Five small experiments</div>
+        <h1>Welcome to my <em>DOM manipulation</em> projects.</h1>
+        <p class="welcome-intro">A hands-on collection of tiny interfaces built with HTML, CSS, and JavaScript. Explore them one at a time and see the page respond.</p>
+        <a class="welcome-continue" href="quote-generator.html">
+            <span>Continue to project one</span>
+            <span class="welcome-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+        <div class="project-preview" aria-label="Projects included">
+            <span>01 Quote</span>
+            <span>02 Modal</span>
+            <span>03 FAQ</span>
+            <span>04 Timer</span>
+            <span>05 Tasks</span>
         </div>
-
-        <div id="task-container"></div>
-    </div>
-    <nav class="project-nav project-nav--previous-only" aria-label="Project navigation">
-        <a href="stopwatch.html">Previous</a>
-    </nav>
-
-    <!-- SCRIPTS -->
-    <script src = "oba.js"></script>
+    </main>
+    <div class="welcome-orbit welcome-orbit--one" aria-hidden="true"></div>
+    <div class="welcome-orbit welcome-orbit--two" aria-hidden="true"></div>
 </body>
 </html>

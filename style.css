@@ -157,30 +157,30 @@
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 24px;
 }
 
 .questions {
-    margin-bottom: 10px;
+    margin: 0 0 8px;
     font-size: 1.7rem;
     text-align: center;
 }
 
 .content-container {
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .heading {
     font-size: 1.3rem;
     font-weight: 600;
-    padding: 20px 0;
+    padding: 16px 0;
     cursor: pointer;
     border-bottom: 1px solid black;
     position: relative;
 }
 
 .content {
-    padding-top: 10px;
+    padding-top: 8px;
     font-size: 1.1rem;
     line-height: 1.5;
     height: 0;
@@ -195,7 +195,7 @@
 }
 
 .content-container.active .content {
-    height: 150px;
+    height: 100px;
 }
 
 .content-container.active .heading {
