@@ -174,12 +174,14 @@
     display: block;
     width: 100%;
     background: transparent;
+    border: 0;
+    border-bottom: 1px solid black;
     text-align: left;
     font-size: 1.3rem;
     font-weight: 600;
-    padding: 16px 0;
+    line-height: 1.35;
+    padding: 16px 32px 16px 0;
     cursor: pointer;
-    border-bottom: 1px solid black;
     position: relative;
 }
 
@@ -195,12 +197,16 @@
 .heading::after {
     content: '+';
     position: absolute;
-    right: -5px;
+    top: 50%;
+    right: 0;
+    width: 24px;
+    color: #17202a;
+    text-align: center;
+    transform: translateY(-50%);
 }
 
 .content-container.active .content {
     height: auto;
-    max-height: 12rem;
     padding-bottom: 8px;
 }
 
@@ -578,6 +584,69 @@
     to { transform: rotate(8deg) scale(1.08); }
 }
 
+@media (max-width: 900px) {
+    .quote-page,
+    .accordion-page,
+    .stopwatch-page {
+        min-height: 100vh;
+        height: auto;
+        padding: 32px 24px 108px;
+    }
+
+    .quote-page .container {
+        width: min(100%, 620px);
+    }
+
+    .quote-page .main-content {
+        height: auto;
+        min-height: 300px;
+        padding: 40px 32px;
+    }
+
+    .accordion {
+        width: min(100%, 680px);
+        padding: 24px;
+        border-radius: 24px;
+    }
+
+    .stopwatch-page .container {
+        width: min(100%, 620px);
+        height: auto;
+        min-height: 220px;
+        padding-bottom: 24px;
+    }
+
+    .todo-page {
+        align-items: flex-start;
+        padding: 48px 24px 108px;
+    }
+
+    .todo-page .container {
+        width: min(100%, 560px);
+    }
+
+    #add-task-container {
+        width: 100%;
+    }
+
+    #modal {
+        width: min(420px, calc(100% - 32px));
+        height: auto;
+        min-height: 110px;
+    }
+
+    #open-btn {
+        top: auto;
+        bottom: 108px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #open-btn:hover {
+        transform: translateX(-50%);
+    }
+}
+
 @media (max-width: 600px) {
     .project-nav {
         right: 16px;
@@ -588,6 +657,106 @@
     .project-nav a {
         min-width: 108px;
         padding: 11px 14px;
+        flex: 1;
+    }
+
+    .quote-page,
+    .accordion-page,
+    .stopwatch-page {
+        padding: 24px 16px 100px;
+    }
+
+    .quote-page .header {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .quote-page .main-content {
+        min-height: 0;
+        padding: 28px 20px;
+        border-radius: 12px;
+    }
+
+    .quote-page .main-content .text-area {
+        font-size: 1.15rem;
+    }
+
+    .quote-page .main-content .person {
+        font-size: 1.2rem;
+    }
+
+    .quote-page .button-area button {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .accordion {
+        padding: 20px 18px;
+        border-radius: 18px;
+    }
+
+    .questions {
+        font-size: 1.35rem;
+    }
+
+    .heading {
+        padding: 14px 24px 14px 0;
+        font-size: 1.05rem;
+    }
+
+    .content {
+        font-size: 1rem;
+    }
+
+    .stopwatch-page .container {
+        min-height: 180px;
+        border-radius: 20px;
+    }
+
+    #timer {
+        padding: 28px 12px;
+        font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    .stopwatch-page .buttons button {
+        margin: 0 6px;
+    }
+
+    .todo-page {
+        padding: 32px 16px 100px;
+    }
+
+    #add-task-container {
+        padding: 14px 8px;
+        border-radius: 14px;
+    }
+
+    .todo-page input {
+        min-width: 0;
+        font-size: 1rem;
+    }
+
+    .task li {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        font-size: 1.05rem;
+        margin: 8px;
+    }
+
+    .task button {
+        flex: 0 0 42px;
+        min-height: 42px;
+    }
+
+    #open-btn {
+        width: min(350px, calc(100% - 32px));
+        height: 64px;
+        font-size: 1.35rem;
+        bottom: 100px;
+    }
+
+    #modal {
+        font-size: 1.2rem;
     }
 
     .welcome-page {
